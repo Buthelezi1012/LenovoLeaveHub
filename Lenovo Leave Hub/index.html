@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LenovoLeaveHub</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div id="auth-section">
+      <h1>Welcome to LenovoLeaveHub</h1>
+      <div id="auth-forms">
+        <form id="signup-form">
+          <h2>Sign Up</h2>
+          <input type="text" placeholder="Full Name" id="signup-name" required />
+          <input type="email" placeholder="Email" id="signup-email" required />
+          <input type="password" placeholder="Password" id="signup-password" required />
+          <select id="signup-role">
+            <option value="learner">Learner</option>
+            <option value="admin">Admin</option>
+          </select>
+          <button type="submit">Sign Up</button>
+        </form>
+
+        <form id="login-form">
+          <h2>Sign In</h2>
+          <input type="email" placeholder="Email" id="login-email" required />
+          <input type="password" placeholder="Password" id="login-password" required />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="dashboard-section" class="hidden">
+      <header>
+        <h2 id="dashboard-welcome"></h2>
+        <button id="logout">Logout</button>
+      </header>
+      <div id="learner-dashboard" class="hidden">
+        <form id="leave-form">
+          <h3>Apply for Leave</h3>
+          <select id="leave-type">
+            <option value="normal">Normal Leave (15)</option>
+            <option value="sick">Sick Leave (12)</option>
+            <option value="responsibility">Responsibility Leave (3)</option>
+          </select>
+          <input type="number" id="leave-days" min="0.5" step="0.5" placeholder="Number of Days" required />
+          <input type="date" id="leave-date" required />
+          <button type="submit">Submit Request</button>
+        </form>
+        <div id="leave-history"></div>
+      </div>
+
+      <div id="admin-dashboard" class="hidden">
+        <h3>Pending Requests</h3>
+        <div id="admin-requests"></div>
+        <button id="download-csv">Download All Data (CSV)</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
